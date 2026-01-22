@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    # This command starts the server and listens on all IPs (0.0.0.0)
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      # KEY STEP: This syncs your current folder (.) to the container (/app)
+      - .:/app
+    ports:
+      # Maps port 8000 inside the container to port 8000 on your localhost
+      - "8000:8000"
