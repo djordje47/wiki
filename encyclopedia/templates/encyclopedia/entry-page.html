@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block body %}
-    {{ entry|safe }}
+    <div class="container">
+            <div class="row justify-content-end px-4">
+                <a href="{% url 'wiki:edit-entry' title=title %}" class="btn btn-success">Edit Entry</a>
+            </div>
+            <div class="col">
+                {{ entry|safe }}
+            </div>
+    </div>
 {% endblock %}
